@@ -61,7 +61,7 @@ jobs:
             "$EC2_USER@$EC2_HOST" 'bash -se' <<'REMOTE'
           set -eu
 
-          cd /home/ubuntu/student-registration-cicd
+          cd /home/ec2-user/CI-CD-project
           git pull --ff-only origin main
 
           docker build -t student-registration:latest .
