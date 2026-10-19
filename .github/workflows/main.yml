@@ -118,3 +118,5 @@ jobs:
           exit 1
 
           REMOTE
+      - name: port change
+        run: docker run -d --name=demoji -p 8080:5000 student-registration:latest
