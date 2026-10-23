@@ -100,7 +100,7 @@ jobs:
           docker run -d \
             --restart unless-stopped \
             --name student-app \
-            -p 5000:5000 \
+            -p 8080:5000 \
             student-registration:latest
 
           # Verify application health
@@ -118,5 +118,4 @@ jobs:
           exit 1
 
           REMOTE
-      - name: port change
-        run: docker run -d --name=demoji -p 8080:5000 student-registration:${{ github.sha }}
+      
