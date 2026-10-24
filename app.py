@@ -3,7 +3,7 @@ from flask import Flask, request, render_template_string
 
 app = Flask(__name__)
 
-# Temporary storage for this beginner project
+# Temporary storage for beginner project
 students = []
 
 HTML = """
@@ -59,7 +59,8 @@ HTML = """
 
     <form method="POST">
         <input name="name" placeholder="Student Name" required>
-        <input name="email" type="email" placeholder="Email Address" required>
+        <input name="email" type="email"
+               placeholder="Email Address" required>
 
         <select name="course" required>
             <option value="">Select Course</option>
@@ -116,5 +117,7 @@ def register():
         HTML, students=students, message=message
     )
 
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+
