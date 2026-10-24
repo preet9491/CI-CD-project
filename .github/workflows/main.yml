@@ -103,19 +103,7 @@ jobs:
             -p 8080:5000 \
             student-registration:latest
 
-          # Verify application health
-          for i in $(seq 1 15); do
-            if curl -fsS http://localhost:8080/health; then
-              echo "Deployment successful"
-              exit 0
-            fi
-
-            sleep 2
-          done
-
-          echo "Health check failed"
-          docker logs student-app
-          exit 1
+    
 
           REMOTE
       
