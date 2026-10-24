@@ -10,7 +10,7 @@ on:
 jobs:
   ci:
     name: Test and Build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout repository
@@ -105,7 +105,7 @@ jobs:
 
           # Verify application health
           for i in $(seq 1 15); do
-            if curl -fsS http://localhost:5000/health; then
+            if curl -fsS http://localhost:8080/health; then
               echo "Deployment successful"
               exit 0
             fi
